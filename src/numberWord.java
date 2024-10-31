@@ -13,13 +13,13 @@ public class numberWord {
         unitNumber[8]="девять ";}
 
     String [] dozenMore19Num = new String [8];
-    {dozenMore19Num [0]="двадцать ";//20
-        dozenMore19Num [1]="тридцать ";//30
+    {dozenMore19Num [0]="двадцать ";
+        dozenMore19Num [1]="тридцать ";
         dozenMore19Num [2]="сорок ";
-        dozenMore19Num [3]="пятьдесят ";//50
-        dozenMore19Num [4]="шестьдесят ";//60
-        dozenMore19Num [5]="семьдесят ";//70
-        dozenMore19Num [6]="восемьдесят ";//80
+        dozenMore19Num [3]="пятьдесят ";
+        dozenMore19Num [4]="шестьдесят ";
+        dozenMore19Num [5]="семьдесят ";
+        dozenMore19Num [6]="восемьдесят ";
         dozenMore19Num [7]="девяносто ";}
 
     String [] dozenNotMore19Num = new String [10];

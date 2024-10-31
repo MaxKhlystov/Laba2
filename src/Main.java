@@ -29,7 +29,7 @@ public class Main {
         sumNumbers = sumNumbers / sizeArray;
         System.out.println(sumNumbers);
         //Пункт д.
-        numberWord number = new numberWord(1212.72);
+        numberWord number = new numberWord(0);
         number.writeNumber();
     }
 }
