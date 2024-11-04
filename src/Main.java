@@ -1,35 +1,18 @@
+/*модификаторы доступа везде*/
 
 public class Main {
-    public static void main(String[] args) {
-        int sizeArray = 10;
+
+    public static void main(String[] args){
+        taskArray FibbonachiNumbersArray = new taskArray(9);
         //пункт а
-        int[] FibbonachiNumbersArray = new int[sizeArray];
-        System.out.println(sizeArray + " первых чисел Фиббоначи: ");
-        for (int i = 0; i < sizeArray; i++) {
-            if (i < 2) {
-                FibbonachiNumbersArray[i] = 1;
-            } else FibbonachiNumbersArray[i] = FibbonachiNumbersArray[i - 1] + FibbonachiNumbersArray[i - 2];
-            System.out.println(FibbonachiNumbersArray[i]);
-        }
+        System.out.println("Для вывода массива чисел Фиббоначи введите 1. Для вывода массива случайных чисел введите 2: ");
+        FibbonachiNumbersArray.printNumbers(2);
         //пункт б
-        int numberFirstElements = 10;
-        System.out.println("Первые " + numberFirstElements + " чисел массива: ");
-        for (int i = 0; i < numberFirstElements; i++)
-        {
-            if (FibbonachiNumbersArray[i] % 2 == 0) {
-                System.out.println(FibbonachiNumbersArray[i] + "-*");
-            } else System.out.println(FibbonachiNumbersArray[i]);
-        }
+        FibbonachiNumbersArray.printFirstNumbers(6);
         //пункт с
-        float sumNumbers = 0;
-        for (int i = 0; i < sizeArray; i++) {
-            sumNumbers = sumNumbers + FibbonachiNumbersArray[i];
-        }
-        System.out.print("Среднее значение одномерного массива: ");
-        sumNumbers = sumNumbers / sizeArray;
-        System.out.println(sumNumbers);
+        System.out.println(FibbonachiNumbersArray.printMiddle());
         //Пункт д.
-        numberWord number = new numberWord(1212.72);
+        numberWord number = new numberWord(2914.26);
         number.writeNumber();
     }
 }

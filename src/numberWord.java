@@ -1,7 +1,7 @@
 //Задачи:
 //модификаторы доступа
 public class numberWord {
-    String [] unitNumber = new String [9];
+    private String [] unitNumber = new String [9];
     {unitNumber[0]="один ";
         unitNumber[1]="два ";
         unitNumber[2]="три ";
@@ -12,7 +12,7 @@ public class numberWord {
         unitNumber[7]="восемь ";
         unitNumber[8]="девять ";}
 
-    String [] dozenMore19Num = new String [8];
+    private String [] dozenMore19Num = new String [8];
     {dozenMore19Num [0]="двадцать ";
         dozenMore19Num [1]="тридцать ";
         dozenMore19Num [2]="сорок ";
@@ -22,7 +22,7 @@ public class numberWord {
         dozenMore19Num [6]="восемьдесят ";
         dozenMore19Num [7]="девяносто ";}
 
-    String [] dozenNotMore19Num = new String [10];
+    private String [] dozenNotMore19Num = new String [10];
     {dozenNotMore19Num [0]="десять ";
         dozenNotMore19Num [1]="одиннадцать ";
         dozenNotMore19Num [2]="двенадцать ";
@@ -34,7 +34,7 @@ public class numberWord {
         dozenNotMore19Num [8]="восемнадцать ";
         dozenNotMore19Num [9]="девятнадцать ";}
 
-    String [] hundredNum = new String [9];
+    private String [] hundredNum = new String [9];
     {hundredNum [0]="сто ";
         hundredNum [1]="двести ";
         hundredNum [2]="триста ";
@@ -45,7 +45,7 @@ public class numberWord {
         hundredNum [7]="восемьсот ";
         hundredNum [8]="девятьсот ";}
 
-    String [] thousandNum = new String[9];
+    private String [] thousandNum = new String[9];
     {thousandNum[0]="одна тысяча ";
         thousandNum[1]="две тысячи ";
         thousandNum[2]="три тысячи ";
@@ -56,31 +56,9 @@ public class numberWord {
         thousandNum[7]="восемь тысяч ";
         thousandNum[8]="девять тысяч ";}
 
-    String [] dozenMore19NumFloat = new String [8];
-    {dozenMore19NumFloat [0]="двадцать ";
-        dozenMore19NumFloat [1]="тридцать ";
-        dozenMore19NumFloat [2]="сорок ";
-        dozenMore19NumFloat [3]="пятьдесят ";
-        dozenMore19NumFloat [4]="шестьдесят ";
-        dozenMore19NumFloat [5]="семьдесят ";
-        dozenMore19NumFloat [6]="восемьдесят ";
-        dozenMore19NumFloat [7]="девяносто ";}
-
-    String [] dozenNotMore19NumFloat = new String [10];
-    {dozenNotMore19NumFloat [0]="десять ";
-        dozenNotMore19NumFloat [1]="одиннадцать ";
-        dozenNotMore19NumFloat [2]="двенадцать ";
-        dozenNotMore19NumFloat [3]="тринадцать ";
-        dozenNotMore19NumFloat [4]="четырнадцать ";
-        dozenNotMore19NumFloat [5]="пятнадцать ";
-        dozenNotMore19NumFloat [6]="шестнадцать ";
-        dozenNotMore19NumFloat [7]="семнадцать ";
-        dozenNotMore19NumFloat [8]="восемнадцать ";
-        dozenNotMore19NumFloat [9]="девятнадцать ";}
-
-    String [] unitNumberFloat = new String [9];
-    {unitNumberFloat[0]="один ";
-        unitNumberFloat[1]="два ";
+    private String [] unitNumberFloat = new String [9];
+    {unitNumberFloat[0]="одна ";
+        unitNumberFloat[1]="две ";
         unitNumberFloat[2]="три ";
         unitNumberFloat[3]="четыре ";
         unitNumberFloat[4]="пять ";
@@ -89,13 +67,13 @@ public class numberWord {
         unitNumberFloat[7]="восемь ";
         unitNumberFloat[8]="девять ";}
 
-    double numb;
-    String hundred="";
-    String dozen="";
-    String unit="";
-    String thousand="";
-    String dozenFloat="";
-    String unitFloat="";
+    private double numb;
+    private String hundred="";
+    private String dozen="";
+    private String unit="";
+    private String thousand="";
+    private String dozenFloat="";
+    private String unitFloat="";
     public numberWord(double numb){
         this.numb=numb;
     }
@@ -104,7 +82,6 @@ public class numberWord {
         int g=0;
         int numbInt = (int) numb;
         double numbFloat = (numb - numbInt);
-        //System.out.println("Заданное число: " + numbFloat);
         numbFloat = Math.round(numbFloat * 100);
         if (numbInt!=0) {
             if ((numbInt / 1000) != 0) {
@@ -131,20 +108,19 @@ public class numberWord {
         {
             if (numbFloat/10 >= 1){
                 if (numbFloat >= 10 && numbFloat <=19){
-                    dozenFloat = dozenNotMore19NumFloat[(int) (numbFloat%10)];
+                    dozenFloat = dozenNotMore19Num[(int) (numbFloat%10)];
                     g=1;
                 }else {
-                    dozenFloat = dozenMore19NumFloat[(int) (numbFloat/10)-2];
+                    dozenFloat = dozenMore19Num[(int) (numbFloat/10)-2];
                     g=0;
                 }
             }
             if (numbFloat%10 >=1 && g==0){
                 unitFloat = unitNumberFloat[(int) (numbFloat % 10) -1];
             }
-            //System.out.println("Заданное число: " + numbFloat%10);
         }
         else unitFloat = "ноль ";
         System.out.println("Заданное число: " + numb);
-        System.out.println("Заданное число словами: "+ thousand + hundred + dozen + unit + "рублей " + dozenFloat + unitFloat + "копеек" );
+        System.out.println("Заданное число словами: "+ thousand + hundred + dozen + unit + "руб. " + dozenFloat + unitFloat + "коп." );
     }
 }
